@@ -25,8 +25,11 @@ class CardListComponent extends StatelessWidget {
               child: ListView.builder(
                   itemCount: cardImage.length,
                   itemBuilder: (context, i) {
-                    return CardList(
-                      image: cardImage[i],
+                    return InkWell(
+                      onTap: () => Navigator.pushNamed(context, '/detail'),
+                      child: CardList(
+                        image: cardImage[i],
+                      ),
                     );
                   }))
         ],

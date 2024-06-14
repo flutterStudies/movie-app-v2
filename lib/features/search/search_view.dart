@@ -6,6 +6,7 @@ import 'package:movie_app_v2/core/preferences/assets.dart';
 
 class SearchView extends StatelessWidget {
   const SearchView({super.key});
+  static const routeName = '/search';
 
   @override
   Widget build(BuildContext context) {

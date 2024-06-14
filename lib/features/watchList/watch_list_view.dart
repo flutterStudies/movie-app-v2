@@ -6,6 +6,7 @@ import 'package:movie_app_v2/core/preferences/assets.dart';
 class WatchlistView extends StatelessWidget {
   const WatchlistView({super.key});
 
+  static const routeName = '/watchlist';
   @override
   Widget build(BuildContext context) {
     const cardImage = [MainAsset.spiderman1, MainAsset.spiderman2];
