@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app_v2/core/components/input_search.dart';
 import 'package:movie_app_v2/core/components/text_poppins.dart';
 import 'package:movie_app_v2/core/extensions/sizedbox.dart';

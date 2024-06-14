@@ -2,6 +2,7 @@ class MainAsset {
   MainAsset._();
 
   static const path = 'assets/images';
+  static const pathIcons = 'assets/icons';
 
   static const splash = '$path/splash.png';
   static const avatar1 = '$path/avatar1.png';
@@ -18,4 +19,9 @@ class MainAsset {
   static const spidermanFloating = '$path/spiderman-floating.png';
   static const spiderman1 = '$path/spiderman1.png';
   static const spiderman2 = '$path/spiderman2.png';
+
+  static const star = '$pathIcons/star.svg';
+  static const time = '$pathIcons/time.svg';
+  static const calendar = '$pathIcons/calendar.svg';
+  static const ticket = '$pathIcons/ticket.svg';
 }

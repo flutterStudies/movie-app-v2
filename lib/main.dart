@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_v2/features/home/home_view.dart';
+import 'package:movie_app_v2/features/search/search_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       ),
 
       // home: const MainView(),
-      home: const HomeView(),
+      home: const SearchView(),
     );
   }
 }
