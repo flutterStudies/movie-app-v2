@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_v2/features/main/main_view.dart';
+import 'package:movie_app_v2/features/home/home_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,11 +13,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Movie App',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        scaffoldBackgroundColor: const Color(0xff242A32),
         useMaterial3: true,
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Color(0xff242A32),
+        ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xff242A32),
+        ),
       ),
-      home: const MainView(),
+
+      // home: const MainView(),
+      home: const HomeView(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app_v2/features/splash/splash_view.dart';
 
 class MainView extends StatefulWidget {
   const MainView({super.key});
@@ -12,9 +13,10 @@ class _MainViewState extends State<MainView> {
 
   @override
   Widget build(BuildContext context) {
-    const pages = [];
+    // const pages = [];
     return Scaffold(
-      body: pages[indexPage],
+      // body: pages[indexPage],
+      body: const SplashView(),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
