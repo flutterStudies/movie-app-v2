@@ -62,18 +62,22 @@ class CardList extends StatelessWidget {
               ),
               Dimens.dp14.height,
               const IconTextItems(
+                icon: MainAsset.star,
                 text: '9.5',
                 color: 0xffFF8700,
               ),
               const IconTextItems(
                 text: 'Action',
+                icon: MainAsset.ticket,
                 color: 0xffEEEEEE,
               ),
               const IconTextItems(
+                icon: MainAsset.calendar,
                 text: '2019',
                 color: 0xffEEEEEE,
               ),
               const IconTextItems(
+                icon: MainAsset.time,
                 text: '139 minutes',
                 color: 0xffEEEEEE,
               ),
@@ -86,27 +90,32 @@ class CardList extends StatelessWidget {
 }
 
 class IconTextItems extends StatelessWidget {
-  const IconTextItems({super.key, required this.color, required this.text});
+  const IconTextItems(
+      {super.key, required this.color, required this.text, required this.icon});
 
   final String? text;
   final int color;
+  final String icon;
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SvgPicture.asset(
-          MainAsset.time,
-          colorFilter: ColorFilter.mode(Color(color), BlendMode.srcIn),
-        ),
-        TextMontserrat(
-          text: text ?? '',
-          color: 0xffFF8700,
-          fontSize: 12.0,
-          weight: FontWeight.w600,
-        ),
-        Dimens.dp4.height,
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(4.0),
+      child: Row(
+        children: [
+          SvgPicture.asset(
+            icon,
+            colorFilter: ColorFilter.mode(Color(color), BlendMode.srcIn),
+          ),
+          Dimens.dp4.width,
+          TextMontserrat(
+            text: text ?? '',
+            color: 0xffFF8700,
+            fontSize: 12.0,
+            weight: FontWeight.w600,
+          ),
+        ],
+      ),
     );
   }
 }

@@ -30,6 +30,8 @@ class _MainViewState extends State<MainView> {
             indexPage = value;
           });
         },
+        unselectedItemColor: const Color(0xff67686D),
+        selectedItemColor: const Color(0xff0296E5),
         items: const [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
