@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app_v2/core/components/input_search.dart';
 import 'package:movie_app_v2/core/components/text_poppins.dart';
 import 'package:movie_app_v2/core/extensions/sizedbox.dart';
 import 'package:movie_app_v2/core/preferences/assets.dart';
@@ -38,19 +39,7 @@ class HomeView extends StatelessWidget {
         padding: const EdgeInsets.all(24.0),
         child: Column(
           children: [
-            TextFormField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: const Color(0xff3A3F47),
-                hintStyle: GoogleFonts.poppins(color: const Color(0xff67686D)),
-                contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
-                hintText: 'Search',
-                suffixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                ),
-              ),
-            ),
+            const InputSerach(),
             Dimens.dp20.height,
             const Expanded(
               child: DefaultTabController(
@@ -59,6 +48,7 @@ class HomeView extends StatelessWidget {
                 child: Column(
                   children: [
                     TabBar(
+                      dividerColor: Colors.transparent,
                       isScrollable: true,
                       indicatorColor: Color(0xff3A3F47),
                       tabs: tabList,
@@ -93,21 +83,29 @@ class ItemTabBarViews extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const movieList = [
+      MainAsset.movie1,
+      MainAsset.movie2,
+      MainAsset.movie3,
+      MainAsset.movie4,
+      MainAsset.movie5,
+      MainAsset.movie6
+    ];
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: GridView.builder(
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 2,
+            crossAxisCount: 3,
             mainAxisSpacing: 18.0,
             crossAxisSpacing: 18.0,
             childAspectRatio: 100 / 146,
           ),
-          itemCount: 30,
-          itemBuilder: (_, index) {
+          itemCount: movieList.length,
+          itemBuilder: (context, index) {
             return ClipRRect(
               // borderRadius: BorderRadius.circular(16.0),
               child: Image.asset(
-                MainAsset.movie1,
+                movieList[index],
                 fit: BoxFit.cover,
               ),
             );
