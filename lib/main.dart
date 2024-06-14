@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_v2/features/detail/detail_view.dart';
-import 'package:movie_app_v2/features/home/home_view.dart';
+import 'package:movie_app_v2/features/main/main_view.dart';
 import 'package:movie_app_v2/features/search/search_view.dart';
 import 'package:movie_app_v2/features/splash/splash_view.dart';
 import 'package:movie_app_v2/features/watchList/watch_list_view.dart';
@@ -34,9 +34,9 @@ class MyApp extends StatelessWidget {
       home: const SplashView(),
       onGenerateRoute: (settings) {
         switch (settings.name) {
-          case HomeView.routeName:
+          case MainView.routeName:
             return MaterialPageRoute(builder: (context) {
-              return const HomeView();
+              return const MainView();
             });
           case SearchView.routeName:
             return MaterialPageRoute(builder: (context) {
