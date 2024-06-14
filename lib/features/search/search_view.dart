@@ -12,6 +12,7 @@ class SearchView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const cardImage = [MainAsset.spiderman1, MainAsset.spiderman2];
     return Scaffold(
       appBar: AppBar(
         actions: [
@@ -34,44 +35,63 @@ class SearchView extends StatelessWidget {
           children: [
             const InputSerach(),
             Dimens.dp24.height,
-            Expanded(child: ListView.builder(itemBuilder: (context, i) {
-              return Row(
-                children: [
-                  Image.asset(MainAsset.spiderman1),
-                  Dimens.dp12.width,
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const TextPoppins(
-                        text: 'Spiderman',
-                        weight: FontWeight.w400,
-                        color: 0xffFFFFFF,
-                        fontSize: 16.0,
-                      ),
-                      Dimens.dp14.height,
-                      const IconTextItems(
-                        text: '9.5',
-                        color: 0xffFF8700,
-                      ),
-                      const IconTextItems(
-                        text: 'Action',
-                        color: 0xffEEEEEE,
-                      ),
-                      const IconTextItems(
-                        text: '2019',
-                        color: 0xffEEEEEE,
-                      ),
-                      const IconTextItems(
-                        text: '139 minutes',
-                        color: 0xffEEEEEE,
-                      ),
-                    ],
-                  )
-                ],
-              );
-            }))
+            Expanded(
+                child: ListView.builder(
+                    itemCount: cardImage.length,
+                    itemBuilder: (context, i) {
+                      return CardList(
+                        image: cardImage[i],
+                      );
+                    }))
           ],
         ),
+      ),
+    );
+  }
+}
+
+class CardList extends StatelessWidget {
+  const CardList({super.key, this.image});
+
+  final String? image;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 24.0),
+      child: Row(
+        children: [
+          Image.asset(image!),
+          Dimens.dp12.width,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const TextPoppins(
+                text: 'Spiderman',
+                weight: FontWeight.w400,
+                color: 0xffFFFFFF,
+                fontSize: 16.0,
+              ),
+              Dimens.dp14.height,
+              const IconTextItems(
+                text: '9.5',
+                color: 0xffFF8700,
+              ),
+              const IconTextItems(
+                text: 'Action',
+                color: 0xffEEEEEE,
+              ),
+              const IconTextItems(
+                text: '2019',
+                color: 0xffEEEEEE,
+              ),
+              const IconTextItems(
+                text: '139 minutes',
+                color: 0xffEEEEEE,
+              ),
+            ],
+          )
+        ],
       ),
     );
   }
