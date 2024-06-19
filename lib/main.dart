@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app_v2/features/home/home_view.dart';
+import 'package:movie_app_v2/features/detail/detail_view.dart';
+import 'package:movie_app_v2/features/main/main_view.dart';
+import 'package:movie_app_v2/features/search/search_view.dart';
+import 'package:movie_app_v2/features/splash/splash_view.dart';
+import 'package:movie_app_v2/features/watchList/watch_list_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -27,7 +31,40 @@ class MyApp extends StatelessWidget {
       ),
 
       // home: const MainView(),
-      home: const HomeView(),
+      home: const SplashView(),
+      onGenerateRoute: (settings) {
+        switch (settings.name) {
+          case MainView.routeName:
+            return MaterialPageRoute(builder: (context) {
+              return const MainView();
+            });
+          case SearchView.routeName:
+            return MaterialPageRoute(builder: (context) {
+              return const SearchView();
+            });
+          case WatchlistView.routeName:
+            return MaterialPageRoute(builder: (context) {
+              return const WatchlistView();
+            });
+          case DetailView.routeName:
+            return MaterialPageRoute(builder: (context) {
+              return const DetailView();
+            });
+          default:
+            return MaterialPageRoute(builder: (context) {
+              return const Scaffold(
+                body: Center(
+                    child: Text(
+                  '404 Page not found',
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w600,
+                      fontSize: 16.0),
+                )),
+              );
+            });
+        }
+      },
     );
   }
 }
