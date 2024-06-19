@@ -26,8 +26,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xff242A32),
         ),
         appBarTheme: const AppBarTheme(
-          backgroundColor: Color(0xff242A32),
-        ),
+            backgroundColor: Color(0xff242A32), foregroundColor: Colors.amber),
       ),
 
       // home: const MainView(),

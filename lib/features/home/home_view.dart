@@ -49,6 +49,7 @@ class HomeView extends StatelessWidget {
                     TabBar(
                       dividerColor: Colors.transparent,
                       isScrollable: true,
+                      tabAlignment: TabAlignment.start,
                       indicatorColor: Color(0xff3A3F47),
                       tabs: tabList,
                       labelColor: Color(0xffFFFFFF),
