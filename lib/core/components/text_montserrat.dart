@@ -13,6 +13,9 @@ class TextMontserrat extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(
+      // overflow: TextOverflow.ellipsis,
+      //       maxLines: 1,
+      //       softWrap: false,
       text ?? '',
       style: GoogleFonts.montserrat(
           fontSize: fontSize, fontWeight: weight, color: Color(color!)),
